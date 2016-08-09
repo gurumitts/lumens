@@ -5,7 +5,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 scheduler = BackgroundScheduler()
 
-led_pins = {'r': 26, 'b': 26, 'g': 26, 'w': 26}
+led_pins = {'r': 26, 'b': 20, 'g': 21, 'w': 19}
 
 #set up gpio
 print GPIO.VERSION
