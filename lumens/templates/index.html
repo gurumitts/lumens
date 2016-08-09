@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/favicon.png">
+</head>
+<style>
+
+    h4 {
+    margin-top: 5px;
+    }
+    h3 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    }
+    .row {
+    margin-bottom: 20px;
+    }
+    .row .row {
+    margin-top: 10px;
+    margin-bottom: 0;
+    }
+
+
+    hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    }
+
+
+</style>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-6">
+            <a onclick="toggle('r')" class="btn btn-danger" role="button" style="width: 100%;">Red</a>
+        </div>
+        <div class="col-xs-6">
+            <a onclick="toggle('b')" class="btn btn-primary" role="button" style="width: 100%;">Blue</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <a onclick="toggle('w')" class="btn btn-default" role="button" style="width: 100%;">White</a>
+        </div>
+        <div class="col-xs-6">
+            <a onclick="toggle('g')" class="btn btn-success" role="button" style="width: 100%;">Green</a>
+
+        </div>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qwest/4.4.2/qwest.min.js"></script>
+<script>
+
+    function toggle(led){
+        console.log(led);
+        qwest.post('/toggle', {
+            'led': led
+         })
+         .then(function(xhr, response) {
+            console.log(response)
+         })
+         .catch(function(e, xhr, response) {
+            console.log("error" + response)
+         });
+    }
+
+
+
+
+</script>
