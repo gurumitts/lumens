@@ -1,5 +1,13 @@
 #!/bin/sh
 
+sudo apt-get --assume-yes install git
+
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+
+pip install apscheduler
+pip install flask
+
 APP_NAME='lumens'
 APP_HOME=/opt/${APP_NAME}
 APP_BIN=${APP_HOME}/bin
@@ -21,7 +29,7 @@ fi
 
 cp -f ${APP_BIN}/${APP_NAME} /etc/init.d/
 
-update-rc.d ${APP_NAME} APP defaults
+update-rc.d ${APP_NAME} defaults
 
 
 
