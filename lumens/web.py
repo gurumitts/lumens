@@ -1,7 +1,5 @@
 from flask import Flask
-from flask import render_template, Response, request, abort
-from babel.dates import format_timedelta
-import json
+from flask import render_template, Response, request
 import logging
 import os
 
