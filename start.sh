@@ -20,5 +20,10 @@ done
 
 git pull
 
+wget https://cdnjs.cloudflare.com/ajax/libs/qwest/4.4.2/qwest.min.js
+mv qwest.min.js lumens/static/
+
+wget https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
+mv bootstrap.min.css lumens/static/
 
 python run.py $1
