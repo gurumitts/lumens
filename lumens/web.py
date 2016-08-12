@@ -13,6 +13,10 @@ logs_location = '/var/log/lumens'
 def index():
     return render_template('index.html')
 
+@app.route('/duo')
+def duo():
+    return render_template('duo.html')
+
 
 @app.route('/logs/')
 def logs(log=None):
