@@ -48,7 +48,11 @@
         </div>
         <div class="col-xs-6">
             <a onclick="toggle('g')" class="btn btn-success" role="button" style="width: 100%;">Green</a>
-
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <a onclick="random()" class="btn btn-default" role="button" style="width: 100%;">White</a>
         </div>
     </div>
 </div>
@@ -58,7 +62,7 @@
 <script>
 
     function toggle(led){
-        console.log(led);
+        console.log('toggle: '+led);
         qwest.post('/toggle', {
             'led': led
          })
@@ -70,6 +74,16 @@
          });
     }
 
+    function random(){
+        console.log('random');
+        qwest.post('/random')
+        .then(function(xhr, response) {
+            console.log(response)
+        })
+        .catch(function(e, xhr, response) {
+            console.log("error" + response)
+        });
+    }
 
 
 

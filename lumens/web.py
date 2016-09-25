@@ -13,6 +13,7 @@ logs_location = '/var/log/lumens'
 def index():
     return render_template('index.html')
 
+
 @app.route('/duo')
 def duo():
     return render_template('duo.html')
@@ -41,6 +42,14 @@ def toggle():
         led = request.form['led']
         logging.getLogger('lumens').debug('toggle switch web %s' % led)
         lumen_control.toggle(led)
+    return 'ko'
+
+
+@app.route('/random', methods=['POST'])
+def random():
+    if request.method == 'POST':
+        logging.getLogger('lumens').debug('random')
+        lumen_control.random()
     return 'ko'
 
 
