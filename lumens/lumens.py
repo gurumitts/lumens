@@ -44,12 +44,12 @@ class Lumens:
         if self.random_mode:
             self._all_off()
             pin = led_pins[led_pins.keys()[randint(0, 3)]]
-            GPIO.output(pin, 1)
+            GPIO.output(pin, 0)
 
     def _all_off(self):
         for led in led_pins:
             pin = led_pins[led]
-            GPIO.output(pin, 0)
+            GPIO.output(pin, 1)
 
 
 
