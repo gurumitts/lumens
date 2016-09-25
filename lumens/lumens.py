@@ -22,7 +22,7 @@ class Lumens:
             GPIO.setup(pin, GPIO.OUT)
             GPIO.output(pin, 1)
         scheduler.start()
-        scheduler.add_job(self._randomize, 'interval', minutes=2)
+        scheduler.add_job(self._randomize, 'interval', seconds=30)
 
     def toggle(self, led):
         pin = led_pins[led]
