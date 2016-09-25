@@ -49,7 +49,6 @@ class Lumens:
     def _all_off(self):
         for led in led_pins:
             pin = led_pins[led]
-            GPIO.setup(pin, GPIO.OUT)
             GPIO.output(pin, 0)
 
 
